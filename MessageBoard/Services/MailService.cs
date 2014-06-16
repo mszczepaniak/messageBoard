@@ -6,24 +6,24 @@ using System.Web;
 
 namespace MessageBoard.Services
 {
-    // object that sends mail
-    public class MailService : MessageBoard.Services.IMailService
+  public class MailService : IMailService
+  {
+    public bool SendMail(string from, string to, string subject, string body)
     {
-        public bool SendMail(string from, string to, string subject, string body){
+      try
+      {
+        var msg = new MailMessage(from, to, subject, body);
 
-            try
-            {
-                var msg = new MailMessage(from, to, subject, body);
+        var client = new SmtpClient();
+        client.Send(msg);
+      }
+      catch (Exception ex)
+      {
+        // Add logging
+        return false;
+      }
 
-                var client = new SmtpClient();
-                client.Send(msg);
-            }
-            catch (Exception ex)
-            {
-                // Add logging
-                return false;
-            }
-            return true;
-        }
+      return true;
     }
+  }
 }

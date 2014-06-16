@@ -32,6 +32,9 @@
   <link href="~/Content/Template/style/bootstrap-responsive.css" rel="stylesheet">
   <link href="~/Content/Template/style/flexslider.css" rel="stylesheet">
   <link href="~/Content/Template/style/prettyPhoto.css" rel="stylesheet">
+  
+  <!-- Our Custom Styles -->
+  <link href="~/Content/Site.css" rel="stylesheet" />
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="~/Content/Template/img/favicon/favicon.png">
@@ -92,6 +95,7 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("My Messages", "MyMessages", "Home")</li>
                   </ul>
                 </div>
               </div>
@@ -202,6 +206,6 @@
   <script type="text/javascript" src="~/scripts/jquery.prettyPhoto.js"></script>
   <script type="text/javascript" src="~/scripts/custom.js"></script>
 
-  @RenderSection("scripts", required: false) <!-- we only need it for few pages, not for every one, so thats why required is false-->
+  @RenderSection("scripts", required: false)
 </body>
 </html>
